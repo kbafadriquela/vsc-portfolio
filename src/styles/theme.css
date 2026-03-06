@@ -1,0 +1,308 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+/* whole page */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* top section: ActivityBar + Sidebar + Content */
+.main {
+  display: flex;
+  flex: 1;
+  height: 100%;
+}
+
+/* wrap Sidebar + Editor content */
+.sidebar-content {
+  display: flex;
+  /* sidebar + content in a row */
+  flex: 1;
+  /* take remaining space */
+}
+
+/* content section: Tabs on top of Editor */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* stack tabs above editor */
+}
+
+/* activity bar */
+.activity-bar {
+  width: 50px;
+  background: #333333;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.icon {
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+.activity-bar .icon i {
+  font-size: 24px;
+  color: #c5c5c5;
+}
+
+.activity-bar i:hover {
+  color: white;
+}
+
+/* sidebar */
+.explorer {
+  width: 220px;
+  /* fixed width so content sits to its right */
+  background: #252526;
+  color: #cccccc;
+  font-size: 13px;
+  height: 100%;
+}
+
+/* Explorer title */
+.explorer-title {
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 10px 12px;
+  color: #888888;
+  text-transform: uppercase;
+}
+
+/* folder row */
+.folder {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: #cccccc;
+}
+
+.folder:hover {
+  background: #2a2d2e;
+}
+
+/* files container
+.files {
+  /* margin-left: 18px; 
+} */
+
+/* file row */
+.file {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+
+.file.active {
+  background: #37373d;
+}
+
+.file:hover {
+  background: #2a2d2e;
+}
+
+/* codicons styling */
+.explorer i {
+  font-size: 16px;
+  color: #c5c5c5;
+}
+
+.codicon.codicon-info {
+  color: #519aba;
+}
+
+.arrow {
+  transition: transform 0.2s ease;
+}
+
+.arrow.open {
+  transform: rotate(90deg);
+}
+
+/* tabs */
+.tabs {
+  display: flex;
+  background: #2d2d2d;
+  border-bottom: 1px solid #3c3c3c;
+  font-size: 13px;
+}
+
+.tab {
+  padding: 6px 6px 6px 10px;
+  border-right: 1px solid #3c3c3c;
+  cursor: pointer;
+  color: #d4d4d4;
+  display: flex;
+  align-items: center;
+}
+
+.tab img,
+.tab i {
+  padding: 5px;
+}
+
+.tab.active {
+  background: #1e1e1e;
+  border-top: 1px solid #007acc;
+}
+
+.tab .close-btn {
+  visibility: hidden;
+  padding: 3px;
+  margin-left: 5px;
+}
+
+.tab.active .close-btn {
+  visibility: visible;
+  font-size: 13px;
+  color: #fff;
+}
+
+.tab.active .close-btn:hover {
+  background-color: #3c3c3c;
+  border-radius: 5px;
+}
+
+/* editor */
+.editor {
+  font-family: "Fira Code", monospace;
+  flex: 1;
+  background: #1e1e1e;
+  color: #d4d4d4;
+  padding: 20px;
+  overflow: auto;
+  /* allows scrolling if content overflows */
+  word-wrap: break-word;
+  /* wraps long lines */
+}
+
+/* bottom bar */
+.status-bar {
+  height: 25px;
+  background: #007acc;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  font-size: 13px;
+  justify-content: space-between;
+}
+
+.status-bar .icon {
+  display: flex;
+  align-items: center;
+  padding: 0px;
+}
+
+.status-bar .icon i {
+  padding: 5px;
+}
+
+.status-bar .left {
+  display: flex;
+}
+
+.status-bar .right {
+  padding-right: 10px;
+}
+
+/* for readme-content */
+.readme-content h1 {
+  color: #569cd6; /* blue headings */
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+}
+
+.readme-content h2 {
+  color: #4ec9b0; /* teal headings */
+  font-size: 1.6em;
+  margin-bottom: 0.5em;
+}
+
+.readme-content h3 {
+  color: #dcdcaa; /* yellow headings */
+  font-size: 1.4em;
+  margin-bottom: 0.5em;
+}
+
+.readme-content p {
+  margin: 0.5em 0;
+}
+
+.readme-content a {
+  color: #4fc1ff; /* light blue links */
+  text-decoration: underline;
+}
+
+.readme-content ul,
+.readme-content ol {
+  padding-left: 1.5em;
+  margin: 0.5em 0;
+}
+
+.readme-content li {
+  margin-bottom: 0.25em;
+}
+
+/* Code blocks */
+.readme-content pre {
+  background-color: #2d2d2d;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+/* Inline code */
+.readme-content code {
+  background-color: #2d2d2d;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: "Fira Code", monospace;
+}
+
+/* Tables */
+.readme-content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0.5em 0;
+}
+
+.readme-content th,
+.readme-content td {
+  border: 1px solid #444;
+  padding: 6px 10px;
+}
+
+.readme-content th {
+  background-color: #333333;
+  color: #dcdcaa;
+}
+.hljs {
+  background-color: #2d2d2d;
+  color: #d4d4d4;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.hljs-keyword { color: #569cd6; }
+.hljs-string { color: #d69d85; }
+.hljs-number { color: #b5cea8; }
+.hljs-comment { color: #6a9955; font-style: italic; }
+.hljs-function { color: #dcdcaa; }
