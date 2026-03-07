@@ -1,17 +1,16 @@
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import CodeBlock from "../components/CodeBlock";
 
 const About = () => {
-    const code = `
-    const developer = {
-    name: "Krizia Bianca",
-    role: "Frontend & Wordpress Developer",
-    experiences: "5+ years",
-    skills: ["Wordpress", "HTML", "CSS", "React", "JS", "PHP"]
-    }
-    `
+    const code = `const developer = {
+name: "Krizia Bianca",
+role: "Frontend & Wordpress Developer",
+experiences: "5+ years",
+skills: ["Wordpress", "HTML", "CSS", "React", "JS", "PHP"],
+interests: ["design", "cooking", "netflix", "cats"],
+education: "BS in Computer Science - New Era University, PH"
+}`
     return (
-        <SyntaxHighlighter language="javascript" style={vscDarkPlus}>{code}</SyntaxHighlighter>
+        <CodeBlock language="javascript" code={code} />
     );
 };
 

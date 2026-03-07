@@ -6,7 +6,7 @@ const StatusBar = () => {
                 <div className="icon"><i className="codicon codicon-error"></i> 0</div>
                 <div className="icon"><i className="codicon codicon-warning"></i> 0</div>
             </div>        
-        <div className="right">React | Portfolio | Philippines</div>
+        <div className="right">LinkedIn | Github | Email</div>
       </div> 
     )
 }

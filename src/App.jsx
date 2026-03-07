@@ -5,7 +5,7 @@ import StatusBar from "./components/StatusBar";
 import Tabs from "./components/Tabs";
 import files from "./data/file.js";
 import "./styles/theme.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function App() {
@@ -16,6 +16,12 @@ function App() {
   const [openTabs, setOpenTabs] = useState([defaultFile]);
   const [activeTab, setActiveTab] = useState(defaultFile);
 
+  useEffect(() => {
+    if(window.location.pathname === "/") {
+      navigate(defaultFile.path, {replace: true });
+    }
+  }, [navigate, defaultFile]);
+  
   const openFile = (file) => {
     const exists = openTabs.find((tab) => tab.name === file.name);
 

@@ -1,10 +1,16 @@
 import files from "../data/file.js";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { getIconForFile } from "vscode-icons-js";
 
 const Sidebar = ({ openFile }) => {
   const [open, setOpen] = useState(true);
+  const navigate = useNavigate();
+
+  const handleClick = (file) => {
+    openFile(file); // update active tab
+    navigate(file.path); // update browser url
+  }
 
   return (
     <div className="explorer">
@@ -24,7 +30,7 @@ const Sidebar = ({ openFile }) => {
               key={file.name}
               to={file.path}
               className={`file ${file.active ? "active" : ""}`}
-              onClick={() => openFile(file)}
+              onClick={() => handleClick(file)}
             >
               {file.name.endsWith(".md") ? (
                 <i className="codicon codicon-info"></i>

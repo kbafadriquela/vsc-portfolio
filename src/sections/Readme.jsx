@@ -1,9 +1,9 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import CodeBlock from "../components/CodeBlock";
 
 const Readme = () => {
-  const md = `
-   # Krizia Bianca  
+  const code =`   # Krizia Bianca  
    
    I'm a freelance Wordpress & Frontend Web Developer. My passion is about creating simple and functional websites. 
    
@@ -21,7 +21,7 @@ const Readme = () => {
    Open the files in the explorer to view my work. `;
   return (
     <div className="readme-content">
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>{md}</ReactMarkdown>
+      <CodeBlock language="markdown" code={code}></CodeBlock>
     </div>
   );
 };
