@@ -1,3 +1,10 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* prevent whole page scrolling */
+  background: #1e1e1e; /* same as editor */
+}
+
 body {
   margin: 0;
   font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -197,7 +204,8 @@ a {
   white-space: pre-wrap !important;   /* wrap long lines */
   word-wrap: break-word !important;   /* support legacy browsers */
   overflow-wrap: break-word !important;
-  margin: 0;                          /* remove default margin */
+  margin: 0;
+  overflow: auto;                          /* remove default margin */
 }
 
 /* bottom bar */
