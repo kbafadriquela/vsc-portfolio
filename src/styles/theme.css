@@ -240,6 +240,9 @@ a {
 }
 
 /* for readme-content */
+.preview-content.readme-content {
+  padding: 20px;
+}
 .readme-content h1 {
   color: #569cd6; /* blue headings */
   font-size: 1.8em;
@@ -309,15 +312,15 @@ a {
   background-color: #333333;
   color: #dcdcaa;
 }
-.hljs {
-  background-color: #2d2d2d;
-  color: #d4d4d4;
-  padding: 10px;
-  border-radius: 4px;
+.preview-btn {
+  background: #0e639c;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-bottom: 8px;
 }
-
-.hljs-keyword { color: #569cd6; }
-.hljs-string { color: #d69d85; }
-.hljs-number { color: #b5cea8; }
-.hljs-comment { color: #6a9955; font-style: italic; }
-.hljs-function { color: #dcdcaa; }
+.preview-btn:hover {
+  background: #1177bb;
+}

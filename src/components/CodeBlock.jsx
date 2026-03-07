@@ -16,7 +16,7 @@ const CodeBlock = ({ language, code }) => {
       customStyle={{
         whiteSpace: "pre-wrap",
         wordBreak: "break-word",
-        overflowX: "hidden",      // disable horizontal scroll
+        overflowX: "auto",      // disable horizontal scroll
         overflowY: "auto",        // allow vertical scroll
         margin: 0,
         fontSize: "14px",

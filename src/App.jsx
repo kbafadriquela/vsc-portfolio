@@ -6,7 +6,7 @@ import Tabs from "./components/Tabs";
 import files from "./data/file.js";
 import "./styles/theme.css";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Routes, Route } from "react-router-dom";
 
 function App() {
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ function App() {
       navigate(defaultFile.path, {replace: true });
     }
   }, [navigate, defaultFile]);
-  
+
   const openFile = (file) => {
     const exists = openTabs.find((tab) => tab.name === file.name);
 
@@ -65,7 +65,7 @@ function App() {
               closeTab={closeTab}
             />
 
-            <Editor activeTab={activeTab} />
+            <Editor activeTab={activeTab} openFile={openFile} />
           </div>
         </div>
       </div>

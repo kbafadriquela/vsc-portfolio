@@ -12,6 +12,8 @@ const Tabs = ({ openTabs, closeTab }) => {
         >
           {file.name.endsWith(".md") ? (
             <i className="codicon codicon-info"></i>
+          ) : file.name === "README Preview" ? (
+            <i className="codicon codicon-list-flat"></i>
           ) : (
             <img
               src={`/icons/${getIconForFile(file.name)}`}
