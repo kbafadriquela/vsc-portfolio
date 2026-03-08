@@ -39,9 +39,11 @@ a {
 
 /* content section: Tabs on top of Editor */
 .content {
-  flex: 1;
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  overflow: auto;
   /* stack tabs above editor */
 }
 
@@ -55,6 +57,7 @@ a {
   flex-direction: column;
   align-items: center;
   padding-top: 10px;
+  flex-shrink: 0;
 }
 
 .icon {
@@ -80,6 +83,7 @@ a {
   color: #cccccc;
   font-size: 13px;
   height: 100%;
+  flex-shrink: 0;
 }
 
 /* Explorer title */
@@ -189,23 +193,43 @@ a {
   border-radius: 5px;
 }
 
+/* wrapper allows horizontal scroll */
+.codeblock-wrapper {
+  overflow-x: auto;       /* enable horizontal scroll */
+  overflow-y: auto;       /* vertical scroll if needed */
+  width: 100%;
+  max-width: max-content;
+}
 /* editor */
 .editor {
   font-family: "Fira Code", monospace;
-  flex: 1;
+  flex: 1 1 auto;
   background: #1e1e1e;
   color: #d4d4d4;
   /* padding: 20px; */
-    overflow-y: auto;   /* scroll if content is too tall */
-  overflow-x: auto; /* horizontal scroll removed */
+  overflow: auto;
+  min-width: 0;
 }
-/* react-syntax-highlighter specific */
-.editor pre {
-  white-space: pre-wrap !important;   /* wrap long lines */
-  word-wrap: break-word !important;   /* support legacy browsers */
-  overflow-wrap: break-word !important;
-  margin: 0;
-  overflow: auto;                          /* remove default margin */
+
+/* prevent flex children from shrinking and breaking pre */
+.editor > * {
+  min-width: max-content; /* important for horizontal scroll */
+}
+
+/* SyntaxHighlighter pre */
+.editor pre,
+.codeblock-wrapper pre,
+.readme-content pre,
+.preview-content.readme-content pre {
+  white-space: pre;      /* don't wrap long lines */
+  font-family: "Fira Code", monospace;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 4px;
+  overflow: visible;     /* allow wrapper to handle scrolling */
+  display: block;
 }
 
 /* bottom bar */
@@ -241,77 +265,124 @@ a {
 }
 
 /* for readme-content */
-.preview-content.readme-content {
+/* General Markdown container */
+.preview-content.readme-content, .preview-content, .readme-content {
   padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+  color: #d4d4d4;
+  background: #1e1e1e;
+  overflow-x: auto; /* allow horizontal scroll if needed */
+  max-width: 100%;
 }
-.readme-content h1 {
-  color: #569cd6; /* blue headings */
-  font-size: 1.8em;
+
+.readme-content {
+  min-width: 0;
+}
+
+/* Headings */
+.readme-content h1,
+.preview-content.readme-content h1 {
+  color: #569cd6;
+  font-size: 2em;
   margin-bottom: 0.5em;
 }
 
-.readme-content h2 {
-  color: #4ec9b0; /* teal headings */
+.readme-content h2,
+.preview-content.readme-content h2 {
+  color: #4ec9b0;
   font-size: 1.6em;
   margin-bottom: 0.5em;
 }
 
-.readme-content h3 {
-  color: #dcdcaa; /* yellow headings */
+.readme-content h3,
+.preview-content.readme-content h3 {
+  color: #dcdcaa;
   font-size: 1.4em;
   margin-bottom: 0.5em;
 }
 
-.readme-content p {
+/* Paragraphs */
+.readme-content p,
+.preview-content.readme-content p {
   margin: 0.5em 0;
+  line-height: 1.5;
 }
 
-.readme-content a {
-  color: #4fc1ff; /* light blue links */
+/* Links */
+.readme-content a,
+.preview-content.readme-content a {
+  color: #4fc1ff;
   text-decoration: underline;
 }
 
+/* Lists */
 .readme-content ul,
-.readme-content ol {
+.preview-content.readme-content ul,
+.readme-content ol,
+.preview-content.readme-content ol {
   padding-left: 1.5em;
   margin: 0.5em 0;
 }
 
-.readme-content li {
+.readme-content li,
+.preview-content.readme-content li {
   margin-bottom: 0.25em;
 }
 
-/* Code blocks */
-.readme-content pre {
-  background-color: #2d2d2d;
-  padding: 10px;
-  border-radius: 4px;
-  overflow-x: auto;
-}
-
-/* Inline code */
-.readme-content code {
-  background-color: #2d2d2d;
-  border-radius: 3px;
-  font-family: "Fira Code", monospace;
-}
-
 /* Tables */
-.readme-content table {
+.readme-content table,
+.preview-content.readme-content table {
   border-collapse: collapse;
   width: 100%;
   margin: 0.5em 0;
 }
 
 .readme-content th,
-.readme-content td {
+.preview-content.readme-content th,
+.readme-content td,
+.preview-content.readme-content td {
   border: 1px solid #444;
   padding: 6px 10px;
 }
 
-.readme-content th {
+.readme-content th,
+.preview-content.readme-content th {
   background-color: #333333;
   color: #dcdcaa;
+}
+
+/* Inline code */
+.readme-content code,
+.preview-content.readme-content code {
+  background-color: #2d2d2d;
+  border-radius: 3px;
+  font-family: "Fira Code", monospace;
+  /* padding: 2px 4px; */
+}
+
+/* Images */
+.readme-content img,
+.preview-content.readme-content img {
+  max-width: 100%;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+/* Buttons inside Markdown (like preview) */
+.readme-content .preview-btn,
+.preview-content.readme-content .preview-btn {
+  background: #0e639c;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.readme-content .preview-btn:hover,
+.preview-content.readme-content .preview-btn:hover {
+  background: #1177bb;
 }
 .preview-btn {
   background: #0e639c;
@@ -324,4 +395,26 @@ a {
 }
 .preview-btn:hover {
   background: #1177bb;
+}
+.preview-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+}
+/* React Syntax Highlighter */
+.react-syntax-highlighter-line-number {
+  display: inline-block;
+  width: 2.5em;
+  color: #858585 !important;
+  border-right: 1px solid #2d2d2d;
+  padding-right: 10px !important;
+  margin-right: 10px;
+}
+
+.react-syntax-highlighter-line-number {
+  display: inline-block;
+  width: 2.5em;       /* fixed width */
+  text-align: right;
+  margin-right: 1em;
 }
