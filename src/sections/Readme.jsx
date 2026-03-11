@@ -53,7 +53,7 @@ Exploring **React.js** and improving **site performance and UX**.
 ### 📫 Connect with Me
 **Portfolio:** [https://meowpress.dev](https://meowpress.dev)   
 **Email:** [krizia.dev@gmail.com](mailto:krizia.dev@email.com)  
-**LinkedIn:** [@kbafadriquela](https://www.linkedin.com/in/kbafadriquela)
+**LinkedIn:** [@kbafadriquela](https://www.linkedin.com/in/kbafadriquela)  
 **Github:** [https://github.com/kbafadriquela](https://github.com/kbafadriquela)  
 
 ---

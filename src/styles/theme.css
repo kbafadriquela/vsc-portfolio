@@ -214,7 +214,7 @@ a {
   align-items: center;
 }
 
-.status-bar .left .icon:last-of-type {
+.status-bar .left .icon-block:last-of-type {
   padding-right: 5px;
 }
 
@@ -225,13 +225,13 @@ a {
   padding-right: 10px; /* optional padding on right */
 }
 
-.status-bar .icon {
+.status-bar .icon-block, .icon {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 
-.status-bar .icon:hover {
+.status-bar .icon-block:hover {
   background-color: #858585;
 }
 
