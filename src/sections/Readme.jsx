@@ -16,7 +16,7 @@ const Readme = ({ openFile }) => {
 - ✨ Believes in **“Less clutter, more clarity.”**  
 - 📚 Always learning new tools to improve workflow  
 
-> *“I build websites that don’t just look good — they feel effortless.”*
+*“I build websites that don’t just look good — they feel effortless.”*
 
 ---
 
@@ -27,7 +27,7 @@ const Readme = ({ openFile }) => {
 | **WordPress** | Custom Themes, Plugin Integration, ACF, Gutenberg |
 | **Frameworks** | React.js, Bootstrap, Tailwind CSS |
 | **Page Builders** | Elementor, Divi |
-| **Tools** | Git, VS Code, Figma, Adobe XD |
+| **Tools** | Git, VS Code, Figma, Canva |
 
 ---
 
@@ -51,15 +51,14 @@ Exploring **React.js** and improving **site performance and UX**.
 ---
 
 ### 📫 Connect with Me
-<p align="center">
-<a href="https://meowpress.dev">Website</a>
-<a href="mailto:krizia.dev@email.com">Email</a>
-<a href="https://www.linkedin.com/in/kbafadriquela">LinkedIn</a>
-</p>
+**Portfolio:** [https://meowpress.dev](https://meowpress.dev)   
+**Email:** [krizia.dev@gmail.com](mailto:krizia.dev@email.com)  
+**LinkedIn:** [@kbafadriquela](https://www.linkedin.com/in/kbafadriquela)
+**Github:** [https://github.com/kbafadriquela](https://github.com/kbafadriquela)  
 
 ---
 
-⭐️ *Thanks for visiting! Feel free to explore my repositories and projects.*
+⭐️ *Thanks for visiting! Feel free to explore my portfolio and projects.*
 
 ## Preview README.md
 *please click the preview link above*`;
@@ -75,7 +74,7 @@ Exploring **React.js** and improving **site performance and UX**.
         Preview README.md
       </button>
       <div className="codeblock-wrapper">
-        <CodeBlock language="javascript" code={markdown} />
+        <CodeBlock language="text" code={markdown} />
       </div>
     </>
   );

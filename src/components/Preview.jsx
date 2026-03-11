@@ -1,4 +1,3 @@
-// Preview.jsx
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import CodeBlock from "../components/CodeBlock";
@@ -9,11 +8,17 @@ const Preview = ({ markdown }) => {
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
-          code({ node, inline, className, children, ...props }) {
+          code({ inline, className, children, ...props }) {
+            // Detect language from className (e.g., language-js)
             const match = /language-(\w+)/.exec(className || "");
-            return !inline && match ? (
-              <CodeBlock language={match[1]} code={String(children).trim()} />
-            ) : (
+
+            // If code block (not inline) and language detected, use CodeBlock
+            if (!inline && match) {
+              return <CodeBlock language={match[1]} code={String(children).trim()} />;
+            }
+
+            // Otherwise, render inline code normally
+            return (
               <code className={className} {...props}>
                 {children}
               </code>

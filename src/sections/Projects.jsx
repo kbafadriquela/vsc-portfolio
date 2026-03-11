@@ -4,16 +4,15 @@ const Projects = () => {
    const code = `[   
     {
         "title": "MedFad",
-        "description": "MedFad is a responsive and user-friendly website for educator Meden F. Fadriquela to showcase her campus journalism resources for basic education students. Built with WordPress, the site features organized lesson content, downloadable materials, and testimonials, ensuring easy navigation and accessibility across devices.",
+        "description": "MedFad is a responsive WordPress site for educator Meden F. Fadriquela, showcasing campus journalism resources with organized lessons, downloadable materials, and testimonials for easy navigation on any device.",
         "skills": [
             "HTML5",
             "CSS",
             "Wordpress",
             "PHP"
         ],
-        "image": "../assets/projects/medfad.png",
+        "image": "../projects/medfad.png",
         "url": "https://projects.meowpress.dev/medfadriquela",
-        "link": "projects.medfad"
     },
     {
         "title": "Next Level",
@@ -23,9 +22,8 @@ const Projects = () => {
             "Javascript",
             "TailwindCSS"
         ],
-        "image": "../assets/projects/nextlevel.png",
+        "image": "../projects/nextlevel.png",
         "url": "https://projects.meowpress.dev/nextlevel",
-        "link": "projects.nextlevel"
     },
     {
         "title": "Portfolio UI",
@@ -36,9 +34,8 @@ const Projects = () => {
             "HTML5",
             "Wordpress"
         ],
-        "image": "../assets/projects/portfolioui.png",
+        "image": "../projects/portfolioui.png",
         "url": "http://portfolioui.000.pe/",
-        "link": "portfolioui.000.pe"
     },
     {
         "title": "Airport Codes PH",
@@ -48,9 +45,8 @@ const Projects = () => {
             "CSS3",
             "HTML5"
         ],
-        "image": "../assets/projects/airportcodesph.png",
+        "image": "../projects/airportcodesph.png",
         "url": "https://airport-codes-ph.vercel.app/",
-        "link": "phairportscod.es"
     },
     {
         "title": "Portfolio",
@@ -61,9 +57,8 @@ const Projects = () => {
             "HTML5",
             "CSS3"
         ],
-        "image": "../assets/projects/portfolio.png",
+        "image": "../projects/portfolio.png",
         "url": "https://kbafadriquela.github.io/",
-        "link": "kbafadrique.la"
     },
     {
         "title": "Electric Vehicle Association of the Philippines",
@@ -75,9 +70,8 @@ const Projects = () => {
             "Wordpress",
             "PHP"
         ],
-        "image": "../assets/projects/evap.png",
+        "image": "../projects/evap.png",
         "url": "https://web.archive.org/web/20170411040158/http://evap.com.ph/",
-        "link": "evap.com.ph"
     },
     {
         "title": "Super Explainer Videos",
@@ -87,9 +81,8 @@ const Projects = () => {
             "CSS",
             "Javascript"
         ],
-        "image": "../assets/projects/sev-2.png",
+        "image": "../projects/sev-2.png",
         "url": "https://web.archive.org/web/20181127035302/https://superexplainervideos.com/",
-        "link": "superexplainervideos.com"
     },
     {
         "title": "Red Emperor Resources",
@@ -100,9 +93,8 @@ const Projects = () => {
             "PHP",
             "Wordpress"
         ],
-        "image": "../assets/projects/redemp.png",
+        "image": "../projects/redemp.png",
         "url": "https://web.archive.org/web/20200811235949/http://redemperorresources.com/",
-        "link": "redemperorresources.com"
     },
     {
         "title": "Metropolitan Pest Control",
@@ -114,9 +106,8 @@ const Projects = () => {
             "Wordpress",
             "PHP"
         ],
-        "image": "../assets/projects/metpest.png",
+        "image": "../projects/metpest.png",
         "url": "https://projects.meowpress.dev/metpest",
-        "link": "metpest.org"
     }
 ]`
  return (

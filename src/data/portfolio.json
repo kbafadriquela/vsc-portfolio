@@ -8,7 +8,7 @@
             "Wordpress",
             "PHP"
         ],
-        "image": "../assets/projects/medfad.png",
+        "image": "../projects/medfad.png",
         "url": "https://projects.meowpress.dev/medfadriquela",
         "link": "projects.medfad"
     },
@@ -20,7 +20,7 @@
             "Javascript",
             "TailwindCSS"
         ],
-        "image": "../assets/projects/nextlevel.png",
+        "image": "../projects/nextlevel.png",
         "url": "https://projects.meowpress.dev/nextlevel",
         "link": "projects.nextlevel"
     },
@@ -33,7 +33,7 @@
             "HTML5",
             "Wordpress"
         ],
-        "image": "../assets/projects/portfolioui.png",
+        "image": "../projects/portfolioui.png",
         "url": "http://portfolioui.000.pe/",
         "link": "portfolioui.000.pe"
     },
@@ -45,7 +45,7 @@
             "CSS3",
             "HTML5"
         ],
-        "image": "../assets/projects/airportcodesph.png",
+        "image": "../projects/airportcodesph.png",
         "url": "https://airport-codes-ph.vercel.app/",
         "link": "phairportscod.es"
     },
@@ -58,7 +58,7 @@
             "HTML5",
             "CSS3"
         ],
-        "image": "../assets/projects/portfolio.png",
+        "image": "../projects/portfolio.png",
         "url": "https://kbafadriquela.github.io/",
         "link": "kbafadrique.la"
     },
@@ -72,7 +72,7 @@
             "Wordpress",
             "PHP"
         ],
-        "image": "../assets/projects/evap.png",
+        "image": "../projects/evap.png",
         "url": "https://web.archive.org/web/20170411040158/http://evap.com.ph/",
         "link": "evap.com.ph"
     },
@@ -84,7 +84,7 @@
             "CSS",
             "Javascript"
         ],
-        "image": "../assets/projects/sev-2.png",
+        "image": "../projects/sev-2.png",
         "url": "https://web.archive.org/web/20181127035302/https://superexplainervideos.com/",
         "link": "superexplainervideos.com"
     },
@@ -97,7 +97,7 @@
             "PHP",
             "Wordpress"
         ],
-        "image": "../assets/projects/redemp.png",
+        "image": "../projects/redemp.png",
         "url": "https://web.archive.org/web/20200811235949/http://redemperorresources.com/",
         "link": "redemperorresources.com"
     },
@@ -111,7 +111,7 @@
             "Wordpress",
             "PHP"
         ],
-        "image": "../assets/projects/metpest.png",
+        "image": "../projects/metpest.png",
         "url": "https://projects.meowpress.dev/metpest",
         "link": "metpest.org"
     }
