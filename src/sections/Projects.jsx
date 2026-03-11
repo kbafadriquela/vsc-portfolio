@@ -1,37 +1,126 @@
 import CodeBlock from "../components/CodeBlock";
 
 const Projects = () => {
-   const code = `const Projects = () => {
-   return(
-      <h2>Works</h2>
-
-      <p>Checkout my <em>works</em> below.</p>
-         <ol>
-            <li>
-               <div class="projects" id="project1">
-                  <h2>MedFad</h2>
-                     <p>MedFad is a responsive and user-friendly website for educator Meden F. Fadriquela to showcase her campus journalism resources for basic education students. Built with WordPress, the site features organized lesson content, downloadable materials, and testimonials, ensuring easy navigation and accessibility across devices.</p>
-               </div>
-            </li>
-            <li>
-               <div class="projects" id="project2">
-                  <h2>Next Level</h2>
-                     <p>Next Level is a responsive landing page inspired from a Figma design, built with HTML5 and TailwindCSS for flexible customization.</p>
-                  </div>
-            </li>
-            <li>
-               <div class="projects" id="project3">
-                  <h2>Airport Codes PH</h2>
-                     <p>Airport Codes PH is a website about Philippine Airports, its corresponding airport codes and the explanation behind each code.</p>
-               </div>
-            </li>
-         </ol>
-         )
-      };
-
-export default Projects;`
+   const code = `[   
+    {
+        "title": "MedFad",
+        "description": "MedFad is a responsive and user-friendly website for educator Meden F. Fadriquela to showcase her campus journalism resources for basic education students. Built with WordPress, the site features organized lesson content, downloadable materials, and testimonials, ensuring easy navigation and accessibility across devices.",
+        "skills": [
+            "HTML5",
+            "CSS",
+            "Wordpress",
+            "PHP"
+        ],
+        "image": "../assets/projects/medfad.png",
+        "url": "https://projects.meowpress.dev/medfadriquela",
+        "link": "projects.medfad"
+    },
+    {
+        "title": "Next Level",
+        "description": "Next Level is a responsive landing page inspired from a Figma design, built with HTML5 and TailwindCSS for flexible customization.",
+        "skills": [
+            "HTML5",
+            "Javascript",
+            "TailwindCSS"
+        ],
+        "image": "../assets/projects/nextlevel.png",
+        "url": "https://projects.meowpress.dev/nextlevel",
+        "link": "projects.nextlevel"
+    },
+    {
+        "title": "Portfolio UI",
+        "description": "Portfolio UI is a responsive WordPress theme derived from a Figma design, built on the Underscores based theme for easy customization. It offers a sleek, minimalist look, perfect for showcasing work and projects across all devices.",
+        "skills": [
+            "PHP",
+            "Javascript",
+            "HTML5",
+            "Wordpress"
+        ],
+        "image": "../assets/projects/portfolioui.png",
+        "url": "http://portfolioui.000.pe/",
+        "link": "portfolioui.000.pe"
+    },
+    {
+        "title": "Airport Codes PH",
+        "description": "Airport Codes PH is a website about Philippine Airports, its corresponding airport codes and the explanation behind each code.",
+        "skills": [
+            "ReactJS",
+            "CSS3",
+            "HTML5"
+        ],
+        "image": "../assets/projects/airportcodesph.png",
+        "url": "https://airport-codes-ph.vercel.app/",
+        "link": "phairportscod.es"
+    },
+    {
+        "title": "Portfolio",
+        "description": "This page! Responsive website built with ReactJS and TailwindCSS. The site content is passed in as JSON data, auto generating components for easy maintenance.",
+        "skills": [
+            "ReactJS",
+            "TailwindCSS",
+            "HTML5",
+            "CSS3"
+        ],
+        "image": "../assets/projects/portfolio.png",
+        "url": "https://kbafadriquela.github.io/",
+        "link": "kbafadrique.la"
+    },
+    {
+        "title": "Electric Vehicle Association of the Philippines",
+        "description": "This project involved developing a Wordpress website that shows the organization's support for the EV industry in the Philippines. The client needed a responsive, green and sophisticated website with social media integration. We used the HELP theme framework to organize our efforts during this 6-month project.",
+        "skills": [
+            "HTML5",
+            "CSS",
+            "Javascript",
+            "Wordpress",
+            "PHP"
+        ],
+        "image": "../assets/projects/evap.png",
+        "url": "https://web.archive.org/web/20170411040158/http://evap.com.ph/",
+        "link": "evap.com.ph"
+    },
+    {
+        "title": "Super Explainer Videos",
+        "description": "A company website that offers state-of-the-art visuals in creating explainer videos that will help your business spread message, explain products and increase your conversions.",
+        "skills": [
+            "HTML5",
+            "CSS",
+            "Javascript"
+        ],
+        "image": "../assets/projects/sev-2.png",
+        "url": "https://web.archive.org/web/20181127035302/https://superexplainervideos.com/",
+        "link": "superexplainervideos.com"
+    },
+    {
+        "title": "Red Emperor Resources",
+        "description": "Red Emperor Resources is a natural resource exploration company. The site was designed and coded on Wordpress platform. Basically the website is composed of a basic slider, live price feed and an email and subscription form integration.",
+        "skills": [
+            "HTML5",
+            "CSS",
+            "PHP",
+            "Wordpress"
+        ],
+        "image": "../assets/projects/redemp.png",
+        "url": "https://web.archive.org/web/20200811235949/http://redemperorresources.com/",
+        "link": "redemperorresources.com"
+    },
+    {
+        "title": "Metropolitan Pest Control",
+        "description": "Metropolitan Pest Control Corporation is a high profile pest control company website that combines a basic slider, social media integration, and a lightbox library in a single unified and sophisticated website. We used the Divi framework to support the client's requirements.",
+        "skills": [
+            "HTML5",
+            "CSS",
+            "Javascript",
+            "Wordpress",
+            "PHP"
+        ],
+        "image": "../assets/projects/metpest.png",
+        "url": "https://projects.meowpress.dev/metpest",
+        "link": "metpest.org"
+    }
+]`
  return (
-     <CodeBlock language="jsx" code={code} />
+     <CodeBlock language="json" code={code} />
  )   
 }
 

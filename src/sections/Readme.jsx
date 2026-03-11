@@ -34,7 +34,7 @@ const Readme = ({ openFile }) => {
 ### 💼 Featured Projects
 
 - 🗺️ [**Airport Codes PH**](https://github.com/kbafadriquela/airport-codes-ph)  
-- 🎨 [**Mint – One Page Portfolio Theme**](https://github.com/kbafadriquela/mint)  
+- 🎨 [**Mint – One Page Portfolio Theme**](https://github.com/kbafadriquela/mint-minimal-portfolio)  
 - 🖥️ [**Portfolio UI – WordPress Theme**](https://github.com/kbafadriquela/portfolio-ui)
 
 ---
