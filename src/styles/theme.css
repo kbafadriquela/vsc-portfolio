@@ -458,9 +458,12 @@ a {
     transform: translateX(0);
   }
 
-  .codeblock-wrapper {
-    /* padding: 8px; */
-    font-size: 12px;
+  .editor pre,
+  .codeblock-wrapper pre,
+  .readme-content pre,
+  .preview-content.readme-content pre {
+    font-size: 12px; /* smaller font for mobile */
+    /* padding: 5px; */
   }
 
   .editor {
