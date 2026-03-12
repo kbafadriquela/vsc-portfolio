@@ -45,7 +45,7 @@ npm start
 ---
 
 ## Screenshots
-![VS Code inspired Portfolio of Krizia Bianca Screenshot]( "VS Code inspired Portfolio of Krizia Bianca")
+![VS Code inspired Portfolio of Krizia Bianca Screenshot](https://github.com/kbafadriquela/vsc-portfolio/blob/main/public/projects/krizia-bianca.png "VS Code inspired Portfolio of Krizia Bianca")
 
 ---
 
