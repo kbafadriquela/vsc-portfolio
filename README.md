@@ -1,16 +1,60 @@
-# React + Vite
+# My VS Code Inspired Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio, designed to look and feel like **VS Code**! This portfolio showcases my projects, skills, and experience in a modern, developer-friendly interface.  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- **VS Code-inspired UI**: Activity bar, sidebar, tabs, editor, and status bar  
+- **Responsive Design**: Works seamlessly on desktop and mobile screens  
+- **File Explorer**: Browse project files like in VS Code  
+- **Code Editor**: Syntax-highlighted code preview using **Prism.js**  
+- **Markdown Support**: Render markdown content using **react-markdown**  
+- **Live Preview**: Preview projects and images instantly  
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+---
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend**: React.js, HTML5, CSS3, JavaScript (ES6+)  
+- **Styling**: Custom CSS for VS Code theme  
+- **Libraries & Tools**:  
+  - `react-markdown` (render markdown content)  
+  - `prismjs` (syntax highlighting)  
+  - React Router DOM (routing)  
+  - Fira Code font for code styling  
+- **Other**: Git for version control  
+
+---
+
+## Installation / Setup
+
+1. Clone the repository:  
+```bash
+git clone https://github.com/yourusername/portfolio-vscode.git
+```
+2. Install dependencies:
+```bash
+npm install
+```
+3. Start the development server:
+```bash
+npm start
+```
+---
+
+## Screenshots
+![VS Code inspired Portfolio of Krizia Bianca Screenshot]( "VS Code inspired Portfolio of Krizia Bianca")
+
+---
+
+## 👩‍💻 Developer
+
+Developed by **Krizia Bianca**  
+🌐 [meowpress.dev](https://meowpress.dev)  
+📧 [krizia.dev@email.com](mailto:krizia.dev@email.com)
+
+---
+
+⭐️ *If you find this project helpful, please consider giving it a star!*
