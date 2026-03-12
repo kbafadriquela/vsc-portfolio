@@ -71,11 +71,11 @@ Exploring **React.js** and improving **site performance and UX**.
           openFile({ name: "README Preview", path: "/preview", markdown })
         }
       >
-        Preview README.md
+        Preview
       </button>
-      <div className="codeblock-wrapper">
+      <>
         <CodeBlock language="text" code={markdown} />
-      </div>
+      </>
     </>
   );
 };

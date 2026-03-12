@@ -12,8 +12,13 @@ import "./styles/theme.css";
 
 function App() {
   const navigate = useNavigate();
+  // Toggle Sidebar
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const toggleSidebar = () => {
+    setSidebarOpen((prev) => !prev);
+  };
 
-   // Pick default file: first file inside "my-portfolio"
+  // Pick default file: first file inside "my-portfolio"
   const defaultFile = files[0].children.find((f) => f.name === "README.md");
 
   // States
@@ -28,24 +33,24 @@ function App() {
   }, [navigate, defaultFile]);
 
   const openFile = (file) => {
-  // Guard against undefined
-  if (!file || !file.name) return;
+    // Guard against undefined
+    if (!file || !file.name) return;
 
-  // Add file to tabs if not already open
-  setOpenTabs((prev) => {
-    const exists = prev.find((tab) => tab.name === file.name);
-    if (exists) return prev;
-    return [...prev, file];
-  });
+    // Add file to tabs if not already open
+    setOpenTabs((prev) => {
+      const exists = prev.find((tab) => tab.name === file.name);
+      if (exists) return prev;
+      return [...prev, file];
+    });
 
-  // Set active tab
-  setActiveTab(file);
+    // Set active tab
+    setActiveTab(file);
 
-  // Navigate only if file has a path
-  if (file.path) {
-    navigate(file.path);
-  }
-};
+    // Navigate only if file has a path
+    if (file.path) {
+      navigate(file.path);
+    }
+  };
 
   // Close a tab
   const closeTab = (file) => {
@@ -64,10 +69,10 @@ function App() {
   return (
     <div className="container">
       <div className="main">
-        <ActivityBar />
+        <ActivityBar toggleSidebar={toggleSidebar} />
 
         <div className="sidebar-content">
-          <Sidebar openFile={openFile} />
+          <Sidebar openFile={openFile} sidebarOpen={sidebarOpen} />
 
           <div className="content">
             <Tabs

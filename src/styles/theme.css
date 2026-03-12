@@ -1,9 +1,13 @@
 /* ------------------- Global ------------------- */
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   margin: 0;
-  overflow: hidden;       /* prevent page scroll */
-  background: #1e1e1e;   /* editor background */
+  overflow: hidden;
+  /* prevent page scroll */
+  background: #1e1e1e;
+  /* editor background */
   font-family: "Segoe UI", system-ui, sans-serif;
 }
 
@@ -16,32 +20,44 @@ a {
 .container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100dvh;
 }
 
 .main {
   display: flex;
   flex: 1;
   overflow: hidden;
+  min-height: 0;
 }
 
 .sidebar-content {
   display: flex;
   flex: 1;
-  width: calc(100% - 50px); /* sidebar width subtracted from total */
+  /* width: calc(100% - 50px); sidebar width subtracted from total */
+  min-width: 0;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
-  overflow: auto;
-  min-width: 0;           /* fix flex shrinking */
+  overflow: hidden;
+  min-width: 0;
+  /* fix flex shrinking */
+}
+.content {
+  margin-left: 50px; /* activity bar space when sidebar collapsed */
+  transition: margin-left 0.3s ease;
+}
+
+.explorer.open ~ .content {
+  margin-left: 220px; /* activity bar + sidebar width */
 }
 
 /* ------------------- Activity Bar ------------------- */
 .activity-bar {
-  width: 50px;
+  width: 48px;
+  min-width: 48px;
   background: #333;
   border-right: 1px solid #444;
   color: white;
@@ -50,6 +66,7 @@ a {
   align-items: center;
   padding-top: 10px;
   flex-shrink: 0;
+  z-index: 30;
 }
 
 .activity-bar .icon {
@@ -68,13 +85,23 @@ a {
 
 /* ------------------- Sidebar / Explorer ------------------- */
 .explorer {
+  position: fixed;
+  left: 48px; /* space for activity bar */
+  top: 0;
+  height: calc(100vh - 25px);
   width: 220px;
   background: #252526;
-  border-right: 1px solid #444;
   color: #ccc;
+  border-right: 1px solid #444;
   font-size: 13px;
-  flex-shrink: 0;
-  height: 100%;
+  transform: translateX(0); /* default visible on desktop */
+  transition: transform 0.3s ease;
+  z-index: 20;
+}
+
+/* Add .collapsed class to hide it */
+.explorer.collapsed {
+  transform: translateX(-100%);
 }
 
 .explorer-title {
@@ -85,7 +112,9 @@ a {
   text-transform: uppercase;
 }
 
-.folder, .file, .subfolder {
+.folder,
+.file,
+.subfolder {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -101,7 +130,8 @@ a {
   background: #2a2d2e;
 }
 
-.file, .subfolder {
+.file,
+.subfolder {
   padding: 5px 20px;
 }
 
@@ -120,9 +150,17 @@ a {
 /* ------------------- Tabs ------------------- */
 .tabs {
   display: flex;
+  flex-wrap: nowrap;
+  /* prevent wrapping */
+  overflow-x: auto;
+  /* horizontal scroll */
+  overflow-y: hidden;
+  white-space: nowrap;
   font-size: 13px;
   background: #2d2d2d;
   border-bottom: 1px solid #3c3c3c;
+  flex-shrink: 0;
+  align-items: center;
 }
 
 .tab {
@@ -132,9 +170,12 @@ a {
   border-right: 1px solid #3c3c3c;
   cursor: pointer;
   color: #d4d4d4;
+  flex-shrink: 0;
+  /* prevents tabs from shrinking */
 }
 
-.tab img, .tab i {
+.tab img,
+.tab i {
   padding: 5px;
 }
 
@@ -170,8 +211,9 @@ a {
   min-width: 0;
 }
 
-.editor > * {
-  min-width: max-content;  /* prevent wrapping */
+.editor>* {
+  min-width: max-content;
+  /* prevent wrapping */
 }
 
 .codeblock-wrapper {
@@ -202,7 +244,8 @@ a {
   border-top: 1px solid #444;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* pushes .left and .right apart */
+  justify-content: space-between;
+  /* pushes .left and .right apart */
   color: white;
   font-size: 13px;
   padding: 0 10px;
@@ -222,10 +265,12 @@ a {
   display: flex;
   align-items: center;
   gap: 5px;
-  padding-right: 10px; /* optional padding on right */
+  padding-right: 10px;
+  /* optional padding on right */
 }
 
-.status-bar .icon-block, .icon {
+.status-bar .icon-block,
+.icon {
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -253,17 +298,19 @@ a {
 }
 
 .preview-btn {
+  position: fixed;
+  /* always on top */
+  top: 8px;
+  right: 8px;
+  z-index: 100;
+  /* higher than tabs & sidebar */
+  font-size: 12px;
+  padding: 4px 8px;
   background: #0e639c;
   color: white;
   border: none;
-  padding: 4px 10px;
   border-radius: 2px;
   cursor: pointer;
-  margin-bottom: 8px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 2;
 }
 
 .preview-btn:hover {
@@ -285,20 +332,179 @@ a {
 .image-wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   overflow: auto;
   padding: 10px;
+  width: 100%;
+}
+
+.image-wrapper img {
+  width: 100%;
+  max-width: 900px;
+  /* desktop limit */
+  height: auto;
 }
 
 .zoomable-image {
-  max-width: 800px;
-  max-height: 80%;
+  width: 100%;
+  /* responsive */
+  max-width: 900px;
+  /* desktop max */
+  height: auto;
   cursor: zoom-in;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .zoomable-image.zoomed {
+  width: auto;
+  /* scale to original size */
   max-width: none;
-  max-height: none;
   cursor: zoom-out;
+}
+
+/* Responsive */
+@media (min-width: 769px) {
+  .explorer {
+    transform: translateX(0); /* default shown */
+    transition: transform 0.3s ease;
+  }
+
+  /* collapsed state */
+  .explorer.collapsed {
+    transform: translateX(-100%);
+  }
+
+  /* move content when sidebar is collapsed */
+  .explorer.collapsed ~ .content {
+    margin-left: 0px; /* only activity bar */
+  }
+
+  /* move content when sidebar is open */
+  .explorer.open ~ .content {
+    margin-left: 220px; /* sidebar + activity bar */
+  }
+  .content {
+    margin-left: 220px; /* default width of sidebar */
+    transition: margin-left 0.3s ease;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    display: flex;
+    flex-direction: row;
+    /* keep horizontal */
+  }
+
+  .sidebar-content {
+    position: relative;
+    display: flex;
+  }
+
+  .explorer {
+    position: fixed;
+    left: 50px;
+    /* space for activity bar */
+    top: 0;
+    height: calc(100vh - 25px);
+    /* leave space for status bar */
+    z-index: 20;
+    width: 220px;
+    overflow-y: auto;
+    background: #252526;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .explorer.open {
+    transform: translateX(0);
+  }
+
+  .activity-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: calc(100dvh - 36px);
+    z-index: 30;
+    /* above everything */
+  }
+
+  .content {
+    margin-left: 50px;
+    /* account for activity bar */
+    flex: 1;
+    position: relative;
+    z-index: 10;
+    /* below activity bar, above background */
+    /* overflow: hidden; */
+  }
+
+  .tabs {
+    position: relative;
+    z-index: 15;
+    /* above sidebar but below activity bar */
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tabs::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+  }
+
+  .explorer.open {
+    transform: translateX(0);
+  }
+
+  .codeblock-wrapper {
+    /* padding: 8px; */
+    font-size: 12px;
+  }
+
+  .editor {
+    flex: 1 1 auto;
+    overflow: auto;
+    padding: 0;
+  }
+
+  .image-wrapper {
+    padding: 6px;
+  }
+
+  .zoomable-image {
+    max-width: 100%;
+    touch-action: manipulation;
+  }
+
+  .preview-btn {
+    position: fixed;
+    top: 8px;
+    right: 8px;
+    z-index: 50;
+    /* higher than tabs & sidebar */
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .codeblock-wrapper pre {
+    padding: 5px !important;
+    font-size: 12px;
+  }
+
+  .toggle-mobile {
+    display: flex;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .icon-block {
+    display: none !important;
+  }
+
+  .icon-block:first-of-type {
+    display: flex !important;
+  }
 }

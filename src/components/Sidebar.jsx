@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { getIconForFile } from "vscode-icons-js";
 
-const Sidebar = ({ openFile }) => {
+const Sidebar = ({ openFile, sidebarOpen }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -72,7 +72,7 @@ const Sidebar = ({ openFile }) => {
   };
 
   return (
-    <div className="explorer">
+    <div className={`explorer ${sidebarOpen ? "open" : "collapsed"}`}>
       <div className="explorer-title">EXPLORER</div>
       {renderFiles(files)}
     </div>
